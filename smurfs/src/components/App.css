@@ -26,3 +26,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* My CSS */
+input {
+  border-bottom: 1px solid blue;
+}
