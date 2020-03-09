@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+
 import { SmurfContext } from "../context/SmurfContext.js";
-import SmurfList from '../components/SmurfList.js';
+import SmurfList from "../components/SmurfList.js";
+import AddSmurfForm from "./AddSmurfForm.js";
 
 import axios from "axios";
 
 const App = () => {
   const [smurfState, setSmurfState] = useState([]);
   const temaSmurf = {
-      smurfState,
-      setSmurfState
-  }
+    smurfState,
+    setSmurfState
+  };
 
   useEffect(() => {
     axios
@@ -32,8 +34,9 @@ const App = () => {
         <div>Welcome to your state management version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
-          <br/>
-          <SmurfList/>
+        <br />
+        <AddSmurfForm />
+        <SmurfList />
       </div>
     </SmurfContext.Provider>
   );
