@@ -19,6 +19,7 @@ const AddSmurfForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         addSmurf.setSmurfState([...addSmurf.smurfState, state]);
+
     };
     return (
         <div>

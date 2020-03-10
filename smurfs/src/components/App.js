@@ -27,7 +27,19 @@ const App = () => {
 
   console.log("Thisi is the state => ", temaSmurf.smurfState);
 
+  useEffect(() => {
+      axios.post("http://localhost:3333/smurfs")
+          .then(sent => {
+              setSmurfState(sent.data)
+              console.log("this was sent ==> ", sent)
+          })
+          .catch(sentErr => {
+              console.log('Something went wrong: ', sentErr)
+          })
+  })
+
   return (
+    // <SmurfContext.Provider value={temaSmurf}>
     <SmurfContext.Provider value={temaSmurf}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
